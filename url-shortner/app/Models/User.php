@@ -43,6 +43,6 @@ class User extends Authenticatable
     ];
 
     public function Url(){
-        return $this->hasMany(Url::class, 'id','user_id');
+        return $this->hasMany(Url::class, 'user_id','id');
     }
 }
