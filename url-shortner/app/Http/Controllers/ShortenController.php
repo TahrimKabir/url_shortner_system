@@ -12,8 +12,15 @@ class ShortenController extends Controller
     {
         $shortUrl = substr(str_shuffle($req->url), 0, 6);
         $data = array('user_id' => Auth::user()->id, 'long_url' => $req->url, 'short_url' => $shortUrl, 'click' => 0);
-        Url::create($data);
-
+       
+        $checkD = Url::where('long_url',$req->url)->where('user_id',Auth::user()->id)->get();
+        if(count($checkD)==0){
+            Url::create($data);
+            return redirect()->back()->with('surl','Shortened Url:'.$shortUrl);
+        }else{
+            return redirect()->back()->with('surl','Already Shortened ');
+        }
+        
     }
 
     public function getUrl($url)

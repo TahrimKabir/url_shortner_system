@@ -47,7 +47,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-10 col-6">
+          <div class="col-lg-12 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner text-center">
@@ -61,17 +61,44 @@
              
             </div>
           </div>
-          <div class="col-lg-10 col-6">
+          <div class="col-lg-12 col-6">
             @php
    $short = array(); 
    $click = array();
+   if($url!=null){
    foreach ($url->Url as $item) {
-    echo $item->short_url;
+    
     array_push($short, $item->short_url);
     array_push($click, $item->click);
 }
+}
 @endphp
-            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+            <canvas id="myChart" style="width:100%;max-width:700px" class="mb-2"></canvas>
+          </div>
+
+          <div class="col-lg-12 col-6">
+            <div class="card">
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                   <tr>
+                    <th>Original Url</th>
+                    <th> Short Url</th>
+                    <th>Number of Click</th>
+                   </tr>
+                  </thead>
+                  <tbody>
+                    @foreach($url->url as $u)
+                    <tr>
+                      <td>{{$u->long_url}}</td>
+                      <td>{{$u->short_url}}</td>
+                      <td>{{$u->click}}</td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
           <!-- ./col -->
         </div>
@@ -121,7 +148,7 @@
     options: {
       title: {
         display: true,
-        text: "World Wide Wine Production 2018"
+        text: "Url Vs how many times they have been hited"
       }
     }
   });

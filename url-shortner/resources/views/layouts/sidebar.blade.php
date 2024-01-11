@@ -46,47 +46,17 @@
           </li>
 
           <li class="nav-item ">
-            <a href="{{asset('category/')}}" @if(request()->segment(1)=='category') class="nav-link active" @else class="nav-link" @endif>
+            <a href={{asset('/')}}   class="nav-link" >
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Category List
-               
+                Shorten Url
+                
               </p>
             </a>
-            
+           
           </li>
 
-          <li class="nav-item ">
-            <a href="{{asset('sub-category/')}}" @if(request()->segment(1)=='sub-category') class="nav-link active" @else class="nav-link" @endif>
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Sub Category List
-               
-              </p>
-            </a>
-            
-          </li>
-          <li class="nav-item ">
-            <a href="{{asset('product/')}}" @if(request()->segment(1)=='product') class="nav-link active" @else class="nav-link" @endif>
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Create Product
-                {{-- <i class="right fas fa-angle-left"></i> --}}
-              </p>
-            </a>
-            
-          </li>
-
-          <li class="nav-item ">
-            <a href="{{asset('product-list/')}}" @if(request()->segment(1)=='product-list') class="nav-link active" @else class="nav-link" @endif>
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Product List
-                {{-- <i class="right fas fa-angle-left"></i> --}}
-              </p>
-            </a>
-            
-          </li>
+          
         
         </ul>
       </nav>

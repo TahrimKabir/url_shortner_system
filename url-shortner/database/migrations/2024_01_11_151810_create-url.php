@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Url extends Migration
+class CreateUrl extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,7 @@ class Url extends Migration
         Schema::create('url', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('long_url');
+            $table->text('long_url');
             $table->string('short_url');
             $table->integer('click');
             $table->timestamps();
