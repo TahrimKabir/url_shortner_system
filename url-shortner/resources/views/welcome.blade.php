@@ -469,6 +469,7 @@
                     echo "<p style='color:#fff;'>". $surl."</p>";
                 @endphp
             @else
+            <h2 class="text-center">Login to Create Short Url</h2>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
 

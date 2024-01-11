@@ -90,8 +90,8 @@
                   <tbody>
                     @foreach($url->url as $u)
                     <tr>
-                      <td>{{$u->long_url}}</td>
-                      <td>{{$u->short_url}}</td>
+                      <td style="max-width: 300px; word-wrap: break-word;" >{{$u->long_url}}</td>
+                      <td >{{$u->short_url}}</td>
                       <td>{{$u->click}}</td>
                     </tr>
                     @endforeach
