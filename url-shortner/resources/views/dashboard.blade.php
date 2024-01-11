@@ -52,14 +52,15 @@
             <div class="small-box bg-info">
               <div class="inner text-center">
                 <h3> Welcome, {{Auth::user()->name }}!!!</h3>
-                
-                
-
-                
               </div>
+              
               
              
             </div>
+            
+          </div>
+          <div class="col-lg-12">
+            <a href="{{asset('/')}}" class="btn-md btn-primary form-control text-center">Url Shortner Link</a>
           </div>
           <div class="col-lg-12 col-6">
             @php
