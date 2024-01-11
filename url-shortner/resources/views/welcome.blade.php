@@ -36,7 +36,14 @@
                 </div>
             @endif
 
-            {{Auth::user()->email}}
+            {{-- {{Auth::user()->email}} --}}
+            <form action="{{route('shorten')}}" method="post">
+                @csrf
+             <input type="text" name="url" id="" class="form-control">
+             <button class="btn-sm btn-block">
+                shorten
+             </button>
+            </form>
         </div>
     </body>
 </html>
